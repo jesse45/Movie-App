@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Movie App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Glide css -->
+    <link rel="stylesheet" href="/server/node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/bootstrap.min.css">
+    <!--css/bootstrap.min.css-->
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
+    <!--css/mdb.min.css-->
+    <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
+</head>
+
+<body>
+
+
+
+    <!--Navbar-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="/client/index.html">Navbar</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/client/index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </form>
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+
+
+
+    <!--Main Layout-->
+    <main>
+
+        <section>
+            <div class="jumbotron container">
+                <h2 class="display-4">Hello, world!</h2>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
+                    attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.
+                </p>
+                <form action="/client/views/searchPage.html" id="searchInput" class="form-inline md-form mr-auto mb-4">
+                    <input type="search" name="name" id="name">
+                    <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="container">
+
+            <div>
+                <span>Trending Movies</span>
+            </div>
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                </div>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <!--Footer-->
+    <footer>
+
+    </footer>
+
+
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/jquery.min.js"></script>
+    <!--js/jquery.min.js-->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script src="/server/node_modules/@glidejs/glide/dist/glide.min.js"></script>
+
+
+    <script src="/client//js/carousels.js"></script>
+    <script src="/client/js/client.js"></script>
+
+    <!-- <script src="/client/js/searchPage.js"></script> -->
+
+
+</body>
+
+
+</html>
