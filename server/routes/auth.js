@@ -1,12 +1,11 @@
 const express = require('express');
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 const cors = require('cors');
 const User = require('../model/User')
 const router = express.Router()
 const { registerValidation, loginValidation } = require('../validation')
 const bcrypt = require('bcryptjs');
 const jsonWebToken = require('jsonwebtoken');
-
 
 
 router.post('/register', async (req, res) => {
