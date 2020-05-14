@@ -1,6 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
+const cookieParser = require('cookie-parser')
 
 const app = express();
 
@@ -22,7 +23,23 @@ const postRoute = require('./routes/post')
 let base_url = "https://api.themoviedb.org/3/";
 let api_key = "a5f259e4f1f408e6ec6d0ac6c7c69403";
 
+app.use(cookieParser())
+
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*")
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+
+//     if (req.method === 'OPTIONS') {
+//         res.header('Access-Control-Allow-Headers', 'PUT, POST, PATCH, DELETE, GET')
+//         return res.status(200).json({})
+//     }
+//     next();
+// });
+
+
 app.use(cors());
+
+
 app.use(express.json());
 
 app.use(require('./routes/home'));

@@ -8,6 +8,11 @@ const bcrypt = require('bcryptjs');
 const jsonWebToken = require('jsonwebtoken');
 
 
+
+var corsOptions = {
+    origin: 'http://localhost:5500'
+}
+
 router.post('/register', async (req, res) => {
 
     //validate data
@@ -55,7 +60,14 @@ router.post('/login', async (req, res) => {
     // Create and assign a token
     const token = jsonWebToken.sign({ _id: user.id }, process.env.TOKEN_SECRET);
 
-    res.header('auth-token', token).send(token);
+
+    //res.header('auth-token', token).send(token);
+
+    res.cookie('access_token', token, {
+        maxAge: 3600,
+        httpOnly: true
+    })
+    res.status(200).send(token)
 
 });
 

@@ -1,3 +1,5 @@
+
+
 const api_url = "http://localhost:5000/"
 let users = [
     {
@@ -29,6 +31,7 @@ let users = [
 // })
 
 
+
 document.querySelector("#submit").addEventListener("click", async (event) => {
     event.preventDefault();
     //let name = document.querySelector("#userName")
@@ -47,14 +50,25 @@ document.querySelector("#submit").addEventListener("click", async (event) => {
 
     console.log(reqObj)
 
+
     const response = await fetch(api_url + "api/user/login", {
         method: 'POST',
         body: JSON.stringify(reqObj),
         headers: {
             'Content-Type': 'application/json'
         },
+        //credentials: 'include'
+
     });
 
-    const json = response.text();
-    console.log(json)
+    const jwt = await response.text();
+    console.log(jwt)
+
+    ///document.cookie = jwt
+    //window.location.replace("../index.html")
 });
+
+
+function login() {
+
+}
