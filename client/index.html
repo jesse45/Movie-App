@@ -17,6 +17,11 @@
     <!--css/bootstrap.min.css-->
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
+
+    <!--SwiperJS files-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+
     <!--css/mdb.min.css-->
     <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
 </head>
@@ -47,11 +52,13 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="/client/views/login.html">Login</a>
+                    <a class="nav-link" href="#">Movies</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">People</a>
                 </li>
 
                 <!-- Dropdown -->
@@ -67,12 +74,22 @@
 
             </ul>
             <!-- Links -->
+            <ul class="navbar-nav ml-auto ">
 
-            <form class="form-inline">
+                <li class="nav-item">
+                    <a class="nav-link login-button" href="/client/views/loginUser.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link logout-button" href="/client/views/registerUser.html">Sign Up</a>
+                </li>
+            </ul>
+
+
+            <!-- <form class="form-inline">
                 <div class="md-form my-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 </div>
-            </form>
+            </form> -->
         </div>
         <!-- Collapsible content -->
 
@@ -100,32 +117,181 @@
             </div>
         </section>
 
-        <section class="container">
 
-            <div>
-                <span>Trending Movies</span>
-            </div>
-            <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
 
-                    </ul>
+        <div class="container">
+            <button id="signout">Sign Out</button>
+        </div>
+
+
+
+        <section class="swiper-section container">
+
+            <!-- Slider main container -->
+            <div class="container">
+                <h3><span>Trending Movies</span></h3>
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper trending_movies">
+                        <!-- Slides -->
+
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+
                 </div>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="container">
+                <h3><span>Popular Movies</span></h3>
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper popular_movies">
+                        <!-- Slides -->
+
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+
                 </div>
             </div>
 
+            <!-- Slider main container -->
+            <div class="container">
+                <h3><span>Upcoming Movies</span></h3>
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper upcoming_movies">
+                        <!-- Slides -->
+
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+
+                </div>
+            </div>
 
         </section>
 
+
+
+
     </main>
 
-    <!--Footer-->
-    <footer>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Footer Content</h5>
+                    <p>Here you can use rows and columns to organize your footer content.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
 
     </footer>
+    <!-- Footer -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+    <!--Firebase Auth-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
 
 
 
@@ -141,13 +307,47 @@
     <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
     <script src="/server/node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!--SwiperJS-->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
 
-    <script src="/client//js/carousels.js"></script>
-    <script src="/client/js/client.js"></script>
+    <!-- <script type="module" src="../client/js/carousels.js">
+        import { firebase } from '../client/js/carousels.js';
+    </script> -->
+    <script type="module" src="/client/js/client.js"> </script>
 
-    <!-- <script src="/client/js/searchPage.js"></script> -->
 
+
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            slidesPerView: 1
+            ,
+            spaceBetween: 500,
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                clickable: true
+            },
+        })
+
+        // mySwiper.slideNext();
+
+    </script>
 
 </body>
 

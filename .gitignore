@@ -5,3 +5,9 @@ node_modules/
 logs
 *.log
 npm-debug.log*
+
+#key
+movie-app-auth-d60e4-firebase-adminsdk-tunxu-f311ff7b5f.json
+
+#env
+.env

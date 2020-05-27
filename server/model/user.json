@@ -1,0 +1,13 @@
+{
+    "_id": "database id",
+    "UserId": "Google UID",
+    "name": "name",
+    "username": "username",
+    "email": "email",
+    "movies": {
+        "favoriteMovies": [],
+        "watchList": [],
+        "ratedMovies": []
+    },
+    "comments": []
+}

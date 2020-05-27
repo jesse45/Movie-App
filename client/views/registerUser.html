@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -44,13 +45,13 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">People</a>
+                </li>
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -65,11 +66,16 @@
             </ul>
             <!-- Links -->
 
-            <form class="form-inline">
-                <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                </div>
-            </form>
+            <ul class="navbar-nav ml-auto ">
+
+                <li class="nav-item">
+                    <a class="nav-link login-button" href="/client/views/loginUser.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link logout-button" href="/client/views/registerUser.html">Sign Up</a>
+                </li>
+            </ul>
+
         </div>
         <!-- Collapsible content -->
 
@@ -88,13 +94,36 @@
                 <label for="pass">Password</label>
                 <input class="input" type="password" name="pass" id="password">
 
-                <button class="btn btn-primary" id="submit" type="submit">Login</button>
+                <button class="btn btn-primary" id="submit" type="submit">Sign Up</button>
             </form>
         </div>
     </div>
 
 
-    <script src="/client/js/login.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+    <!--Firebase Auth-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/jquery.min.js"></script>
+    <!--js/jquery.min.js-->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+
+    <script type="module" src="/client/js/registerUser.js"></script>
 
 
 </body>
