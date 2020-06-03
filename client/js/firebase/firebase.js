@@ -2,14 +2,7 @@ import * as checkLogin from './checkLogin.js'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAx-zPI44CQFE41cgP5mW7F_LPStSIbIYE",
-    authDomain: "movie-app-auth-d60e4.firebaseapp.com",
-    databaseURL: "https://movie-app-auth-d60e4.firebaseio.com",
-    projectId: "movie-app-auth-d60e4",
-    storageBucket: "movie-app-auth-d60e4.appspot.com",
-    messagingSenderId: "40945681558",
-    appId: "1:40945681558:web:36967e45f2479e98762eb7",
-    measurementId: "G-Q81DFKEW52"
+
 };
 // Initialize Firebase
 // firebase.initializeApp(firebaseConfig);
