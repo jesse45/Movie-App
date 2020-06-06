@@ -2,8 +2,8 @@ import { signOutUser } from "./firebase.js";
 import { elements } from "../models/base.js";
 
 export const loggedIn = () => {
-    const userName = document.querySelector('.login-button');
-    const signOut = document.querySelector('.logout-button');
+    const userName = document.querySelector('#login-button');
+    const signOut = document.querySelector('#logout-button');
 
 
     userName.href = "/client/views/userPage.html"
@@ -86,9 +86,9 @@ export const loggedOut = () => {
 
     // `;
 
-    const login = document.querySelector('.login-button');
-    const signUp = document.querySelector('.logout-button');
-    console.log(login.href)
+    const login = document.querySelector('#login-button');
+    const signUp = document.querySelector('#logout-button');
+
     login.href = "/client/views/loginUser.html"
     signUp.href = "/client/views/registerUser.html";
     login.textContent = 'LogIn';

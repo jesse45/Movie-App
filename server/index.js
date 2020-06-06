@@ -49,7 +49,7 @@ app.use(require('./routes/movie'));
 
 
 app.use('/api/user', authRoute);
-app.use('/api/posts', postRoute)
+app.use('/api/posts', postRoute);
 
 
 app.listen(5000, () => {

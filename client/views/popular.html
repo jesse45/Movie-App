@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Glide css -->
-    <link rel="stylesheet" href="/server/node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/bootstrap.min.css">
     <!--css/bootstrap.min.css-->
@@ -19,35 +18,62 @@
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
 
     <!--css/mdb.min.css-->
+    <link rel="stylesheet" href="/client/css/searchStyles.css" media="screen" type="text/css">
     <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <form method="POST">
-                <!-- <label for="name">Name</label>
-                <input type="text" name="name" id="userName"> -->
+    <div class="container content-container">
 
-                <label for="email">Email</label>
-                <input class="input" type="email" name="email" id="userEmail">
 
-                <label for="pass">Password</label>
-                <input class="input" type="password" name="pass" id="password">
+        <h2>Popular Movies</h2>
+        <div class="content-wrapper">
+            <!-- Card -->
+            <!-- <div class="card"> -->
 
-                <button class="btn btn-primary" id="submit" type="submit">Sign Up</button>
-            </form>
+            <!-- Card image -->
+            <!-- <div class="view overlay">
+                    <img class="card-img-top" src="" alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div> -->
+
+            <!-- Card content -->
+            <!-- <div class="card-body"> -->
+
+            <!-- Title -->
+            <!-- <h4 class="card-title">Card title</h4> -->
+            <!-- Text -->
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's
+                        content.</p>
+                </div> -->
+
+            <!-- </div> -->
+            <!-- Card -->
+
         </div>
+
+
     </div>
 
 
+
+    <div class="loading">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+  https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
     <!--Firebase Auth-->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
@@ -65,8 +91,16 @@
     <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/mdb.min.js"></script>
 
 
+
+
+    <!-- Production -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
     <script src="/client/js/models/mainHeader.js"></script>
-    <script type="module" src="/client/js/registerUser.js"></script>
+    <script type="module" src="/client/js/popular.js"></script>
+    <!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
+
 
 
 </body>

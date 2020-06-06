@@ -39,6 +39,7 @@ export const signInUser = (email, password) => {
 };
 
 export const signOutUser = (signoutbutton) => {
+
     signoutbutton.addEventListener("click", (event) => {
         firebase.auth().signOut().then(function () {
             // Sign-out successful.
@@ -80,6 +81,7 @@ export const checkUserState = () => {
             // ...
             checkLogin.loggedIn();
             console.log(idtoken)
+
         } else {
             checkLogin.loggedOut();
             // User is signed out.

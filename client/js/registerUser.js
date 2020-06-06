@@ -1,5 +1,6 @@
 import { initializeFirebase, register } from "./firebase/firebase.js";
-import { elements } from "./models/base.js"
+import { elements } from "./models/base.js";
+
 
 class RegisterUser {
     constructor(api_url, loginForm) {
@@ -29,7 +30,7 @@ class RegisterUser {
             register(reqObj.email, reqObj.password)
 
 
-            // const response = await fetch(api_url + "api/user/register", {
+            // const response = await fetch(api_url + "api/user/login", {
             //     method: 'POST',
             //     body: JSON.stringify(reqObj),
             //     headers: {
@@ -59,5 +60,7 @@ const api_url = "http://localhost:5000/"
 const loginForm = elements.loginForm;
 
 const user = new RegisterUser(api_url, loginForm)
+
+
 
 user.signUp();

@@ -17,4 +17,18 @@ router.get('/search/:name', async (req, res) => {
     res.json(json);
 });
 
+router.get('/search/:name/:id', async (req, res) => {
+
+    // if the search query is
+    let searchName = req.params.name;
+    let id = req.params.id;
+    console.log(searchName)
+    let api_url = "".concat(base_url, 'search/movie/?api_key=', api_key, '&language=en-US&query=', searchName, '&page=', id, '&include_adult=false');
+    console.log(api_url)
+    const fetch_response = await fetch(api_url);
+    const json = await fetch_response.json();
+    //console.log(json);
+    res.json(json);
+});
+
 module.exports = router;

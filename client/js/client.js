@@ -1,5 +1,5 @@
 import { initializeFirebase, checkUserState, signOutUser } from "./firebase/firebase.js";
-import { elements } from "./models/base.js"
+import { elements } from "./models/base.js";
 
 class Client {
     constructor(carousel_pics, api_url, signOut) {
@@ -50,13 +50,14 @@ class Client {
             let html;
             console.log(poster_image)
 
-            html = `<div class="netflix">
+            html = `
                         <div class="swiper-slide">
-                            <a href="${'/client/views/movies.html'}" data-src="${el.id}" class="image">
-                                <img class="carousel_images" src="${poster_image}" alt="">
+                            <ion-icon name="ellipsis-horizontal-circle-sharp"></ion-icon>
+                            <a href="${'/client/views/movies.html'}" data-src="${el.id}" >
+                                <img class="" src="${poster_image}" alt="">
                             </a>
                         </div>
-                    </div>`;
+                    `;
 
             elements.trending_movies.insertAdjacentHTML('beforeend', html)
         });
@@ -65,13 +66,14 @@ class Client {
             let html;
             console.log(poster_image)
 
-            html = `<div class="netflix">
+            html = `
                         <div class="swiper-slide">
+                            <ion-icon name="ellipsis-horizontal-circle-sharp"></ion-icon>
                             <a href="${'/client/views/movies.html'}" data-src="${el.id}" class="image">
-                                <img class="carousel_images" src="${poster_image}" alt="">
+                                <img class="" src="${poster_image}" alt="">
                             </a>
                         </div>
-                    </div>`;
+                    `;
 
             elements.popular_movies.insertAdjacentHTML('beforeend', html)
         });
@@ -80,13 +82,14 @@ class Client {
             let html;
             console.log(poster_image)
 
-            html = `<div class="netflix">
+            html = `
                         <div class="swiper-slide">
+                            <ion-icon name="ellipsis-horizontal-circle-sharp"></ion-icon>
                             <a href="${'/client/views/movies.html'}" data-src="${el.id}" class="image">
-                                <img class="carousel_images" src="${poster_image}" alt="">
+                                <img class="" src="${poster_image}" alt="">
                             </a>
                         </div>
-                    </div>`;
+                    `;
 
             elements.upcoming_movies.insertAdjacentHTML('beforeend', html)
         });
@@ -99,6 +102,7 @@ class Client {
     }
 
 }
+
 
 // Initialize Firebase
 initializeFirebase();
@@ -113,6 +117,7 @@ const carousel_pics = elements.carousel_pics;
 
 const api_url = "http://localhost:5000/"
 const signOut = elements.signoutButton;
+console.log(signOut)
 
 const client = new Client(carousel_pics, api_url, signOut);
 

@@ -1,5 +1,5 @@
 import { initializeFirebase, checkUserState, signOutUser, signInUser } from "./firebase/firebase.js";
-import { elements } from "./models/base.js"
+import { elements } from "./models/base.js";
 
 class LoginUser {
     constructor(loginForm) {
@@ -40,5 +40,6 @@ checkUserState();
 
 const loginForm = elements.loginForm;
 const login = new LoginUser(loginForm)
+
 
 login.loginUser();

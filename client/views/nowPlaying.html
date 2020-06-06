@@ -19,35 +19,57 @@
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
 
     <!--css/mdb.min.css-->
+    <link rel="stylesheet" href="/client/css/searchStyles.css" media="screen" type="text/css">
     <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <form method="POST">
-                <!-- <label for="name">Name</label>
-                <input type="text" name="name" id="userName"> -->
+    <div class="container content-container">
 
-                <label for="email">Email</label>
-                <input class="input" type="email" name="email" id="userEmail">
+        <h2>Now Playing</h2>
+        <div class="content-wrapper">
+            <!-- Card -->
+            <!-- <div class="card"> -->
 
-                <label for="pass">Password</label>
-                <input class="input" type="password" name="pass" id="password">
+            <!-- Card image -->
+            <!-- <div class="view overlay">
+                    <img class="card-img-top" src="" alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div> -->
 
-                <button class="btn btn-primary" id="submit" type="submit">Sign Up</button>
-            </form>
+            <!-- Card content -->
+            <!-- <div class="card-body"> -->
+
+            <!-- Title -->
+            <!-- <h4 class="card-title">Card title</h4> -->
+            <!-- Text -->
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's
+                        content.</p>
+                </div> -->
+
+            <!-- </div> -->
+            <!-- Card -->
+
         </div>
+
+
     </div>
 
-
+    <div class="loading">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+  https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
     <!--Firebase Auth-->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
@@ -66,7 +88,8 @@
 
 
     <script src="/client/js/models/mainHeader.js"></script>
-    <script type="module" src="/client/js/registerUser.js"></script>
+    <script type="module" src="/client/js/nowPlaying.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
 
 </body>
