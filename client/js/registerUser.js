@@ -11,7 +11,8 @@ class RegisterUser {
     signUp() {
         this.loginForm.addEventListener("click", async (event) => {
             event.preventDefault();
-            //let name = document.querySelector("#userName")
+            let name = document.querySelector("#name")
+            let username = document.querySelector("#userName")
             let email = document.querySelector("#userEmail")
             let password = document.querySelector('#password')
 
@@ -20,14 +21,17 @@ class RegisterUser {
 
             let reqObj = {
                 //check email to see if it is a valid format in the login.html user email input
-                //name: name.value,
+                name: name.value,
+                username: username.value,
                 email: email.value,
                 password: password.value
             }
 
             console.log(reqObj)
 
-            register(reqObj.email, reqObj.password)
+            register(reqObj.name, reqObj.username, reqObj.email, reqObj.password);
+
+
 
 
             // const response = await fetch(api_url + "api/user/login", {

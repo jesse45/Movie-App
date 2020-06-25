@@ -1,4 +1,5 @@
-import * as checkLogin from './checkLogin.js'
+import * as checkLogin from './checkLogin.js';
+import UserMovies from '../models/userInfo.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,11 +23,26 @@ export const initializeFirebase = () => {
 
 export const signInUser = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(function (data) {
+        .then(async function (data) {
+            const api_url = "http://localhost:5000/";
+            let userMovies = new UserMovies()
+            let userInfo = { id: data.user.xa, email: data.user.email }
             checkLogin.loggedIn();
-            console.log(data);
+            const response = await fetch(api_url + 'login', {
+                method: 'POST',
+                body: JSON.stringify(userInfo),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const movies = await response.json();
+
+            userMovies.setMovie(movies);
+            userMovies.persistData()
+            console.log(movies)
+            ///console.log(data);
             //dont allow for reaccess to to the login screen
-            window.location.replace("../index.html")
+            //window.location.replace("../index.html")
         })
         .catch(function (error) {
             // Handle Errors here.
@@ -44,6 +60,8 @@ export const signOutUser = (signoutbutton) => {
         firebase.auth().signOut().then(function () {
             // Sign-out successful.
             checkLogin.loggedOut();
+
+            sessionStorage.setItem('userMovies', JSON.stringify([]))
             console.log("user signed out")
         }).catch(function (error) {
             // An error happened.
@@ -51,10 +69,24 @@ export const signOutUser = (signoutbutton) => {
     })
 };
 
-export const register = (email, password) => {
+export const register = (name, username, email, password) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function (data) {
+        .then(async function (data) {
             console.log(data)
+            const api_url = "http://localhost:5000/";
+
+            let userInfo = { name: name, username: username, email: email }
+            //create a user in database
+            await fetch(api_url + 'register', {
+                method: 'POST',
+                body: JSON.stringify(userInfo),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+
+            }).then(data => {
+                console.log(data.text());
+            })
             // reset the form
         })
         .catch(function (error) {

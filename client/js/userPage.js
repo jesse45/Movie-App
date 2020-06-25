@@ -7,8 +7,8 @@ const reqObj = {
     userResponse: "this is a test"
 }
 
-const response = fetch(api_url + "api/posts", {
-    //credentials: 'same-origin',
+const response = fetch(api_url + "login", {
+
 
 });
 

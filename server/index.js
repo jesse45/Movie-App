@@ -35,21 +35,20 @@ const postRoute = require('./routes/post')
 let base_url = "https://api.themoviedb.org/3/";
 let api_key = "a5f259e4f1f408e6ec6d0ac6c7c69403";
 
-app.use(cookieParser())
-
 
 app.use(cors());
 
 
 app.use(express.json());
 
+
 app.use(require('./routes/home'));
 app.use(require('./routes/search'));
 app.use(require('./routes/movie'));
 
 
-app.use('/api/user', authRoute);
-app.use('/api/posts', postRoute);
+app.use(require('./routes/auth'));
+app.use(require('./routes/post'));
 
 
 app.listen(5000, () => {

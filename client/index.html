@@ -20,7 +20,7 @@
 
     <!--SwiperJS files-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/client.css">
 
     <!--css/mdb.min.css-->
     <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
@@ -33,18 +33,33 @@
     <main>
 
         <section>
-            <div class="jumbotron container">
-                <h2 class="display-4">Hello, world!</h2>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
-                    attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.
-                </p>
-                <form action="/client/views/searchPage.html" id="searchInput" class="form-inline md-form mr-auto mb-4">
-                    <input type="search" name="name" id="name">
-                    <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
-                </form>
+            <!-- Jumbotron -->
+            <div class="card card-image card-background" style="background-repeat: no-repeat;">
+                <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+                    <div class="py-5">
+
+                        <!-- Content -->
+                        <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>
+                        <h2 class="card-title h2 my-4 py-2">Jumbotron with image overlay</h2>
+                        <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui
+                            quidem minima debitis perferendis vitae cumque et quo impedit.</p>
+                        <a class="btn blue-gradient"><i class="fas fa-clone left"></i> View project</a>
+                        <!-- <form action="/client/views/searchPage.html" id="searchInput"
+                            class="form-inline md-form mr-auto mb-4" style="position: relative;">
+                            <input type="search" name="name" id="name">
+                            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+                        </form> -->
+                        <form action="/client/views/searchPage.html" id="searchInput" class="form-inline mr-auto"
+                            style="position: relative;">
+                            <input class="form-control mr-sm-2" name="name" id="name type=" search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn blue-gradient" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
             </div>
+            <!-- Jumbotron -->
         </section>
 
 
@@ -52,7 +67,7 @@
             <div class="netflix">
                 <!-- Slider main container -->
                 <div class="container">
-                    <h3><span>Trending Movies</span></h3>
+                    <h3 class="header-container"><span>Trending Movies</span></h3>
                     <div class="swiper-container">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper trending_movies">
@@ -104,7 +119,7 @@
 
                 <!-- Slider main container -->
                 <div class="container">
-                    <h3><span>Popular Movies</span></h3>
+                    <h3 class="header-container"><span>Popular Movies</span></h3>
                     <div class="swiper-container">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper popular_movies">
@@ -126,7 +141,7 @@
 
                 <!-- Slider main container -->
                 <div class="container">
-                    <h3><span>Upcoming Movies</span></h3>
+                    <h3 class="header-container"><span>Upcoming Movies</span></h3>
                     <div class="swiper-container">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper upcoming_movies">
@@ -154,7 +169,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
+    <footer class="page-footer font-small blue-gradient pt-4">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
@@ -264,6 +279,11 @@
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
 
+    <!-- Production -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+
     <!-- <script type="module" src="../client/js/carousels.js">
         import { firebase } from '../client/js/carousels.js';
     </script> -->
@@ -277,7 +297,7 @@
     <script>
         var mySwiper = new Swiper('.swiper-container', {
             slidesPerView: 6,
-            spaceBetween: 8,
+            spaceBetween: 15,
             // Optional parameters
             direction: 'horizontal',
             loop: true,

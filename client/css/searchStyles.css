@@ -75,3 +75,11 @@
 .tippy-arrow {
   color:  #fff;
 }
+
+#favorites, watchlist, rating {
+  cursor: pointer;
+}
+
+.link-popup {
+  color: #000;
+}

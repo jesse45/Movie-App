@@ -61,3 +61,53 @@ ion-icon {
 	color: rgb(121, 187, 241);
 	transition: 0.2s;
   }
+
+  .card-title {
+	overflow-wrap: break-word;
+  }
+
+  .img-size {
+	  width: 100%;
+  }
+
+
+  .card-background {
+	background-position: top center;
+	background-size: cover;
+  }
+
+
+  #drop-content{
+	position: absolute;
+	z-index: 1;
+  
+  }
+  
+  #drop-content p{
+	display: block;
+	background-color: #dfdfdf;
+	text-decoration: none;
+  }
+  
+  .c-animation {
+	position: absolute;
+	z-index: 1;
+  }
+  
+  .tippy-box {
+	background-color: #fff;
+	color: #000;
+  }
+  
+  .tippy-arrow {
+	color:  #fff;
+  }
+  
+  #favorites, watchlist, rating {
+	cursor: pointer;
+  }
+  
+  .link-popup {
+	color: #000;
+  }
+

@@ -4,9 +4,7 @@ const cors = require('cors');
 const User = require('../model/User');
 const Comment = require('../model/Comments')
 const router = express.Router()
-const { registerValidation, loginValidation } = require('../validation')
-const bcrypt = require('bcryptjs');
-const jsonWebToken = require('jsonwebtoken');
+
 
 
 var admin = require("firebase-admin");
@@ -29,20 +27,12 @@ router.post('/register', async (req, res) => {
 
     // create a new user
     const user = new User({
-        name: "bob",
-        username: "champion",
-        email: 'yourone@mail.com',
-        favoriteMovies: ['logan', 'scarface'],
-        watchList: ['deadpool', 'avengers'],
-        ratedMovies: [{
-            movie: 'blade',
-            rating: 71
-        },
-        {
-            movie: 'shazam',
-            rating: 80
-        }
-        ]
+        name: req.body.name,
+        username: req.body.username,
+        email: req.body.email,
+        favoriteMovies: [],
+        watchList: [],
+        ratedMovies: []
     });
 
 
@@ -55,7 +45,7 @@ router.post('/register', async (req, res) => {
     })
 
     try {
-        const savedUser = await comment.save();
+        const savedUser = await user.save();
 
         // user.save(function (error) {
         //     if (!error) {
@@ -66,13 +56,13 @@ router.post('/register', async (req, res) => {
         //             })
         //     }
         // })
-        Comment.findOne({})
-            .populate('postedBy')
-            .exec(function (error, posts) {
-                console.log(JSON.stringify(posts, null, "\t"))
-            })
+        // Comment.findOne({})
+        //     .populate('postedBy')
+        //     .exec(function (error, posts) {
+        //         console.log(JSON.stringify(posts, null, "\t"))
+        //     })
 
-        res.send({ user: user._id });
+        res.status(200).send(savedUser);
     }
     catch (err) {
         res.status(400).send(err)
@@ -104,14 +94,22 @@ router.post('/login', async (req, res) => {
 
     // idToken comes from the client app
     //console.log(req.body.stsTokenManager.accessToken)
-    admin.auth().verifyIdToken(req.body.stsTokenManager.accessToken)
-        .then(function (decodedToken) {
+    admin.auth().verifyIdToken(req.body.id)
+        .then(async function (decodedToken) {
 
             // fetch users info from data base and send it to the client
             let uid = decodedToken.uid;
+            const emailExist = await User.find({ email: req.body.email }, (err, result) => {
+                if (result) {
+                    res.status(200).send(result[0].favoriteMovies)
+                }
+                else {
+                    res.status(400).send(error)
+                }
+            });
             // ...
             console.log(uid)
-            res.status(200).send(uid)
+
         }).catch(function (error) {
             // Handle error
             console.log(error)

@@ -10,7 +10,7 @@ function mainHeader() {
 
 
     const markup = `
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark primary-color">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark blue-gradient">
     <div class="container">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="${obj.homePageLink}">Navbar</a>
