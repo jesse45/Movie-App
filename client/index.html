@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
 
     <!--SwiperJS files-->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="./css/client.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/client.css" type="text/css">
 
     <!--css/mdb.min.css-->
     <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
@@ -50,9 +50,9 @@
                             <input type="search" name="name" id="name">
                             <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
                         </form> -->
-                        <form action="/client/views/searchPage.html" id="searchInput" class="form-inline mr-auto"
+                        <form action="/client/views/searchPage.html" id="searchInput" class="form-inline"
                             style="position: relative;">
-                            <input class="form-control mr-sm-2" name="name" id="name type=" search" placeholder="Search"
+                            <input class="form-control " name="name" id="name type=" search" placeholder="Search"
                                 aria-label="Search">
                             <button class="btn blue-gradient" type="submit">Search</button>
                         </form>
@@ -71,48 +71,13 @@
                     <div class="swiper-container">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper trending_movies">
-                            <!-- Slides -->
-                            <!-- <div class="swiper-slide">
-                                <a href="/client/views/movies.html" data-src="456456">
-                                    <img class="carousel_images"
-                                        src="https://image.tmdb.org/t/p/w154/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="/client/views/movies.html" data-src="456456">
-                                    <img class="carousel_images"
-                                        src="https://image.tmdb.org/t/p/w154/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="/client/views/movies.html" data-src="456456">
-                                    <img class="carousel_images"
-                                        src="https://image.tmdb.org/t/p/w154/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="/client/views/movies.html" data-src="456456">
-                                    <img class="carousel_images"
-                                        src="https://image.tmdb.org/t/p/w154/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="/client/views/movies.html" data-src="456456">
-                                    <img class="carousel_images"
-                                        src="https://image.tmdb.org/t/p/w154/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg" alt="">
-                                </a>
-                            </div> -->
-
-
+                            <!-- dynamic cards go here -->
                         </div>
-                        <!-- If we need pagination -->
-                        <!-- <div class="swiper-pagination"></div> -->
 
-                        <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
 
-                        <!-- If we need scrollbar -->
+
 
                     </div>
                 </div>
@@ -127,14 +92,10 @@
 
 
                         </div>
-                        <!-- If we need pagination -->
-                        <!-- <div class="swiper-pagination"></div> -->
 
                         <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
-
-                        <!-- If we need scrollbar -->
 
                     </div>
                 </div>
@@ -149,14 +110,10 @@
 
 
                         </div>
-                        <!-- If we need pagination -->
-                        <!-- <div class="swiper-pagination"></div> -->
 
                         <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
-
-                        <!-- If we need scrollbar -->
 
                     </div>
                 </div>
@@ -274,9 +231,8 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
-    <script src="/server/node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <!--SwiperJS-->
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
     <!-- Production -->
@@ -315,7 +271,32 @@
                 prevEl: '.swiper-button-prev',
             },
 
-            // And if we need scrollbar
+
+            breakpoints: {
+                180: {
+                    slidesPerView: 1,
+
+                },
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                // when window width is >= 640px
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+                1200: {
+                    slidesPerView: 6,
+                    spaceBetween: 20
+                }
+            }
 
         })
 

@@ -1,0 +1,148 @@
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-results {
+    /* flex: 200px; */
+    flex: 1 200px;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 7px;
+    transition: 0.2s;
+    position: relative;
+    /* align-items: center;
+  justify-content: space-around; */
+}
+
+.card-results:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+
+
+.content-container {
+    padding-top: 30px;
+    padding-bottom: 45px;
+}
+
+.card_radius {
+    border-top-left-radius: calc(.40rem - 1px);
+    border-top-right-radius: calc(.40rem - 1px);
+
+}
+
+.ion-icon {
+  color: rgb(211, 218, 221);
+  font-size: 1.6rem;
+  position: absolute;
+  top:0; 
+  right:0;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.ion-icon:hover {
+  color: rgb(121, 187, 241);
+  transition: 0.2s;
+}
+
+#drop-content{
+  position: absolute;
+  z-index: 1;
+
+}
+
+#drop-content p{
+  display: block;
+  background-color: #dfdfdf;
+  text-decoration: none;
+}
+
+.c-animation {
+  position: absolute;
+  z-index: 1;
+}
+
+.tippy-box {
+  background-color: #fff;
+  color: #000;
+}
+
+.tippy-arrow {
+  color:  #fff;
+}
+
+#favorites, watchlist, rating {
+  cursor: pointer;
+}
+
+.link-popup {
+  color: #000;
+}
+
+ion-icon {
+	color: rgb(211, 218, 221);
+	font-size: 1.6rem;
+	position: absolute;
+	top:0; 
+	right: 0;
+	z-index: 4;
+  }
+  
+  ion-icon:hover {
+	color: rgb(121, 187, 241);
+	transition: 0.2s;
+  }
+
+  .card-title {
+	overflow-wrap: break-word;
+  }
+
+  .img-size {
+	  width: 100%;
+  }
+
+
+  .card-background {
+	background-position: top center;
+	background-size: cover;
+  }
+
+
+  #drop-content{
+	position: absolute;
+	z-index: 1;
+  
+  }
+  
+  #drop-content p{
+	display: block;
+	background-color: #dfdfdf;
+	text-decoration: none;
+  }
+  
+  .c-animation {
+	position: absolute;
+	z-index: 1;
+  }
+  
+  .tippy-box {
+	background-color: #fff;
+	color: #000;
+  }
+  
+  .tippy-arrow {
+	color:  #fff;
+  }
+  
+  #favorites, watchlist, rating {
+	cursor: pointer;
+  }
+  
+  .link-popup {
+	color: #000;
+  }
+

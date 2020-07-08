@@ -61,8 +61,8 @@ class Client {
                                     <ion-icon name="ellipsis-horizontal-circle-sharp" class="ion-icon" 
                                     data-movie="${el.title}"></ion-icon>
                                 </div>
-                                <a href="${'/client/views/movies.html'}" data-src="${el.id}" >
-                                    <img class="img-size" src="${poster_image}" alt="">
+                                <a href="${`/client/views/movies.html?movieId=${el.id}&movie=${el.title}`}" data-src="${el.id}" >
+                                    <img class="img-size" src="${poster_image}" alt="${el.title}">
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title"> ${el.title}</h6>
@@ -88,8 +88,8 @@ class Client {
                                     <ion-icon name="ellipsis-horizontal-circle-sharp" class="ion-icon" 
                                     data-movie="${el.title}"></ion-icon>
                                 </div>
-                                <a href="${'/client/views/movies.html'}" data-src="${el.id}">
-                                    <img class="img-size" src="${poster_image}" alt="">
+                                <a href="${`/client/views/movies.html?movieId=${el.id}&movie=${el.title}`}" data-src="${el.id}">
+                                    <img class="img-size" src="${poster_image}" alt="${el.title}">
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title"> ${el.title}</h6>
@@ -115,8 +115,8 @@ class Client {
                                     <ion-icon name="ellipsis-horizontal-circle-sharp" class="ion-icon" 
                                     data-movie="${el.title}"></ion-icon>
                                 </div>
-                                <a href="${'/client/views/movies.html'}" data-src="${el.id}" class="image">
-                                    <img class="img-size" src="${poster_image}" alt="">
+                                <a href="${`/client/views/movies.html?movieId=${el.id}&movie=${el.title}`}" data-src="${el.id}" class="image">
+                                    <img class="img-size" src="${poster_image}" alt="${el.title}">
                                 </a>
                                 <div class="card-body">
                                     <h6 class="card-title"> ${el.title}</h6>
@@ -226,7 +226,7 @@ $(document).on('click', '.ion-icon', (event) => {
     // console.log(event)
 
     if (logout.textContent === 'Sign Out') {
-        let stringMovies = sessionStorage.getItem('userMovies');
+        let stringMovies = sessionStorage.getItem('bookmarks');
         userMovie.userMovies = JSON.parse(stringMovies);
 
         isMovie = userMovie.userMovies.includes(client.movie)

@@ -45,6 +45,7 @@ app.use(express.json());
 app.use(require('./routes/home'));
 app.use(require('./routes/search'));
 app.use(require('./routes/movie'));
+app.use(require('./routes/people'));
 
 
 app.use(require('./routes/auth'));

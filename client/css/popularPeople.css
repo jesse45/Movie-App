@@ -1,0 +1,38 @@
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-results {
+    /* flex: 200px; */
+    max-height: 350px;
+    flex: 1 200px;
+    margin-left: 35px;
+    margin-top: 35px;
+    border-radius: 7px;
+    transition: 0.2s;
+    position: relative;
+    /* align-items: center;
+  justify-content: space-around; */
+}
+
+.card-results:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+
+
+.content-container {
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+.card_radius {
+    border-top-left-radius: calc(.40rem - 1px);
+    border-top-right-radius: calc(.40rem - 1px);
+
+}
+

@@ -31,7 +31,7 @@ export const showLoading = (searchPage, loading) => {
                 })
 
 
-        }, 700);
+        }, 300);
         pages++;
 
     }

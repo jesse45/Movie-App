@@ -37,9 +37,11 @@ export const signInUser = (email, password) => {
             })
             const movies = await response.json();
 
-            userMovies.setMovie(movies);
-            userMovies.persistData()
-            console.log(movies)
+            userMovies.setFavorites(movies.favoriteMovies);
+            userMovies.setWatchList(movies.watchList);
+            userMovies.persistFavorites();
+            userMovies.persistWatchlist();
+            console.log(movies.favoriteMovies);
             ///console.log(data);
             //dont allow for reaccess to to the login screen
             //window.location.replace("../index.html")
@@ -61,7 +63,8 @@ export const signOutUser = (signoutbutton) => {
             // Sign-out successful.
             checkLogin.loggedOut();
 
-            sessionStorage.setItem('userMovies', JSON.stringify([]))
+            sessionStorage.setItem('bookmarks', JSON.stringify([]))
+            sessionStorage.setItem("user", "")
             console.log("user signed out")
         }).catch(function (error) {
             // An error happened.
@@ -87,6 +90,7 @@ export const register = (name, username, email, password) => {
             }).then(data => {
                 console.log(data.text());
             })
+            sessionStorage.setItem("user", true);
             // reset the form
         })
         .catch(function (error) {

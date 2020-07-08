@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,45 +18,227 @@
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
 
+
+    <!--SwiperJS files-->
+
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+
     <!--css/mdb.min.css-->
     <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/client/css/movies.css" media="screen" type="text/css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="content-wrapper">
-            <!-- Card -->
-            <div class="card">
 
-                <!-- Card image -->
-                <div class="view overlay">
-                    <img class="card-img-top" src="" alt="Card image cap">
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
+    <main>
+
+        <section>
+            <!-- Jumbotron -->
+            <div class="card card-image card-background">
+                <div class="text-white text-center rgba-stylish-strong fwh-slide">
+                    <div class="movie-container">
+                        <section class="main_movie_content">
+                            <div class="poster_image">
+                                <div class="poster-borders">
+                                    <img class="poster" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_information">
+                                <section>
+                                    <div class="header_poster">
+                                        <div class="title_elements">
+                                            <h2 class="header_info">
+                                                <a class="movie-title" href="#"></a>
+                                                <span class="release_year"></span>
+                                                <span class="rating"></span>
+                                            </h2>
+                                            <div class="movie_facts">
+                                                <span class="release_date"></span>
+                                                <span class="runtime"></span>
+                                                <span class="genre"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="actions">
+                                        <li>
+                                            <div class="vote_average"></div>
+
+                                        </li>
+                                        <li>
+                                            <div class="bookmark"><i class="fas fa-bookmark"></i></div>
+                                        </li>
+                                        <li>
+                                            <div class="favorites-heart"><i class="far fa-heart"></i></div>
+                                        </li>
+                                        <li>
+                                            <div class="list"><i class="fas fa-list"></i></div>
+                                        </li>
+                                    </ul>
+                                    <div class="header_summary">
+                                        <h3 class="tagline"></h3>
+                                        <h3>Overview</h3>
+                                        <p class="summary"></p>
+                                    </div>
+
+                                </section>
+                            </div>
+                        </section>
+
+                    </div>
                 </div>
-
-                <!-- Card content -->
-                <div class="card-body">
-
-                    <!-- Title -->
-                    <h4 class="card-title">Card title</h4>
-                    <!-- Text -->
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's
-                        content.</p>
-                    <!-- Button -->
-                    <a href="#" class="btn btn-primary">Button</a>
-
-                </div>
+            </div>
+            <!-- Jumbotron -->
 
             </div>
-            <!-- Card -->
+        </section>
 
+
+        <div class="media">
+            <div class="column_wrapper">
+                <div class="content_container">
+                    <div>
+                        <div class="content_wrapper">
+                            <section class="cast_container">
+                                <h3 class="header-container"><span>Top Cast</span></h3>
+                                <div class="people_container">
+                                    <ol class="people_scroller">
+
+                                    </ol>
+                                </div>
+                                <a href="#">More cast &AMP;crew</a>
+
+                            </section>
+                            <section class="social_panel">
+                                <div class="menu">
+                                    <h3 dir="auto">Social</h3>
+                                    <ul>
+                                        <li class="menu_panel">
+                                            <a href="#">Review</a>
+                                            <span>0</span>
+                                        </li>
+                                        <li class="menu_panel">
+                                            <a href="#">Discussion</a>
+                                            <span>0</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card w-100 mb-3 panel_review">
+                                    <div class="card-body">
+                                        <h5>
+                                            <a href="#" class="card-title discussion_title"></a>
+                                        </h5>
+                                        <p class="card-text discussion_text">We do not have any review data for this
+                                            movie at the moment.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="recommendation_section">
+                                <div class="recommendation_wrapper">
+                                    <h3><span>Recommendations</span></h3>
+                                    <div class="recommendation_scroller">
+                                        <!--should fade-->
+                                        <ol class="recommended_movies">
+
+                                        </ol>
+                                    </div>
+                                </div>
+
+
+                            </section>
+                        </div>
+                    </div>
+                    <div class="extra_panel">
+                        <div>
+                            <section class="extra_info">
+                                <div>
+                                    <section class="facts">
+                                        <div class="social_media">
+                                            <ul class="social_media_list">
+                                                <li>
+                                                    <a class="twitter_link" href=" #"
+                                                        data-tippy-content="Visit Twitter"><i
+                                                            class="fab fa-twitter fa-2x text-body"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a class="instagram_link" href="#"
+                                                        data-tippy-content="Visit Instagram"><i
+                                                            class="fab fa-instagram fa-2x text-body"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a class="facebook_link" href="#"
+                                                        data-tippy-content="Visit Facebook"><i
+                                                            class="fab fa-facebook fa-2x text-body"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a class="homepage_link" href="#"
+                                                        data-tippy-content="Visit Homepage"><i
+                                                            class="fas fa-link fa-2x text-body"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p id="status">
+                                            <strong><bdi>Status</bdi></strong>
+                                            <br>
+                                        </p>
+                                        <p id="language">
+                                            <strong><bdi>Original Language</bdi></strong>
+                                            <br>
+                                        </p>
+                                        <p id="budget">
+                                            <strong><bdi>Budget</bdi></strong>
+                                            <br>
+                                        </p>
+                                        <p id="revenue">
+                                            <strong><bdi>Revenue</bdi></strong>
+                                            <br>
+                                        </p>
+                                    </section>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </div>
 
+
+
+
+
+        <!-- <section class="media">
+            <div class="column_wrapper">
+                <div class="content_container">
+                    <div class="content_wrapper">
+                        <section class="cast_container">
+                            <h3 class="header-container"><span>Cast</span></h3>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper cast_carousel">
+
+                                </div>
+                                <!-- Add Arrows -->
+        <!-- <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+    </main>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+    <!--Firebase Auth-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
 
 
 
@@ -69,10 +252,58 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="/server/node_modules/mdbootstrap/js/mdb.min.js"></script>
 
+
+    <!-- Development -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <!--change to production-->
+
     <script src="/client/js/models/mainHeader.js"></script>
-    <script src="/client/js/movies.js"></script>
+    <script type="module" src="/client/js/movies.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
+    <script>
+        // With the above scripts loaded, you can call `tippy()` with a CSS
+        // selector and a `content` prop:
+        tippy('[data-tippy-content]', {
+            theme: 'material',
+            interactive: true,
+            animation: 'scale-extreme',
+            duration: [1000, 0]
 
+        });
+    </script>
+
+    <!-- <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            slidesPerView: 6,
+            spaceBetween: 15,
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            observer: true,
+            observerParents: true,
+            //autoHeight: true,
+
+            // If we need pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+
+        })
+
+        // mySwiper.slideNext();
+
+    </script> -->
 </body>
 
 </html>

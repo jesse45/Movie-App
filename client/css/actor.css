@@ -1,0 +1,56 @@
+.content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+
+.content-wrapper {
+    max-width: 1600px;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 20px;
+}
+
+.image_header {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.actor_content {
+    display: flex;
+}
+
+.actor_image {
+    max-width: 300px;
+}
+
+.actor_bio {
+    width: 300px;
+}
+
+.info {
+    margin-top: 25px;
+}
+
+.also_known_as li {
+    list-style-type: none;
+    /* margin-bottom: 20px; */
+    /* display: inline-flex; */
+    width: 100%;
+margin-bottom: 0;
+display: inline-flex;
+align-content: center;
+align-items: center;
+}
+
+.also_known_as {
+    padding-left: 0;
+}
+
+.actor_info {
+    margin-top: 20px;
+}

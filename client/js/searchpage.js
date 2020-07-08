@@ -28,7 +28,7 @@ class SearchPage {
         this.total_pages = this.json.total_pages;
         console.log(this.json);
 
-        if (this.pageNumber >= this.total_pages) {
+        if (this.pageNumber > this.total_pages) {
             this.pageNumber = 1;
         }
         else {
@@ -62,17 +62,17 @@ class SearchPage {
 
             let card_image = "".concat(this.picture_url, picture_size, el.poster_path);
 
-            html = `<div class="card">
-            <div class="card-body">
-                <a href="${'/client/views/movies.html'}" data-src="${el.id}">
-                    <h5 class="card-title">"${"Panel Titile"}"</h5>
-                    <img src="${card_image}" alt="">
-                </a>
-            <p class="card_text">
-                "${el.overview}"
-            </p>
-            </div>
-            </div>`;
+            html = `<div class="card mb-3">
+                        <div class="card-body">
+                            <a href="${`/client/views/movies.html?movieId=${el.id}`}" data-src="${el.id}">
+                                <h5 class="card-title">"${"Panel Titile"}"</h5>
+                                <img src="${card_image}" alt="${el.title}">
+                            </a>
+                            <p class="card_text">
+                                "${el.overview}"
+                            </p>
+                        </div>
+                    </div>`;
 
             document.querySelector(".content-wrapper").insertAdjacentHTML('beforeend', html)
 

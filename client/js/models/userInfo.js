@@ -1,13 +1,23 @@
 export default class UserMovies {
     constructor() {
-        this.userMovies = [];
+        this.bookmarks = [];
+        this.watchlist = [];
     }
 
-    setMovie(movies) {
-        this.userMovies = movies;
+    setFavorites(movies) {
+        this.bookmarks = movies;
     }
 
-    persistData() {
-        sessionStorage.setItem('userMovies', JSON.stringify(this.userMovies));
+    setWatchList(movies) {
+        this.watchlist = movies;
+    }
+
+    persistFavorites() {
+        sessionStorage.setItem('bookmarks', JSON.stringify(this.bookmarks));
+        sessionStorage.setItem("user", true)
+    }
+    persistWatchlist() {
+        sessionStorage.setItem('watchlist', JSON.stringify(this.watchlist));
+        sessionStorage.setItem("user", true)
     }
 }

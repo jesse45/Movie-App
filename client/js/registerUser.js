@@ -68,3 +68,5 @@ const user = new RegisterUser(api_url, loginForm)
 
 
 user.signUp();
+
+

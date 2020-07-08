@@ -8,5 +8,42 @@ export const elements = {
     trending_movies: document.querySelector(".trending_movies"),
     popular_movies: document.querySelector(".popular_movies"),
     upcoming_movies: document.querySelector(".upcoming_movies"),
-    loading: document.querySelector('.loading')
+    loading: document.querySelector('.loading'),
+    headerLarge: document.querySelector('.card-background'),
+    poster: document.querySelector('.poster'),
+    movieTitle: document.querySelector('.movie-title'),
+    releaseYear: document.querySelector('.release_year'),
+    releaseDate: document.querySelector('.release_date'),
+    rating: document.querySelector('.rating'),
+    runtime: document.querySelector('.runtime'),
+    genre: document.querySelector('.genre'),
+    voteAverage: document.querySelector('.vote_average'),
+    bookmark: document.querySelector('.fa-bookmark'),
+    favorites: document.querySelector('.favorites-heart'),
+    watchList: document.querySelector('.fa-list'),
+    tagline: document.querySelector('.tagline'),
+    summary: document.querySelector('.summary'),
+    castCarousel: document.querySelector('.people_scroller'),
+    twitterLink: document.querySelector('.twitter_link'),
+    facebookLink: document.querySelector('.facebook_link'),
+    instagramLink: document.querySelector('.instagram_link'),
+    homepageLink: document.querySelector('.homepage_link'),
+    status: document.querySelector('#status'),
+    budget: document.querySelector('#budget'),
+    language: document.querySelector('#language'),
+    revenue: document.querySelector('#revenue'),
+    discussionTitle: document.querySelector('.discussion_title'),
+    discussionText: document.querySelector('.discussion_text'),
+    recommendedMovies: document.querySelector('.recommended_movies'),
+    actorImage: document.querySelector('.actor_image'),
+    knownFor: document.querySelector('.Known_for'),
+    gender: document.querySelector('.gender'),
+    birthday: document.querySelector('.birthday'),
+    placeOfBirth: document.querySelector('.place_of_birth'),
+    alsoKnownAs: document.querySelector('.also_known_as')
+}
+
+export const baseUrls = {
+    api_url: "http://localhost:5000/",
+    picture_url: "https://image.tmdb.org/t/p/"
 }

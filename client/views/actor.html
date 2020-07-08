@@ -14,61 +14,71 @@
     <link rel="stylesheet" href="/server/node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/bootstrap.min.css">
-    <!--css/bootstrap.min.css-->
+
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
 
     <!--css/mdb.min.css-->
-    <link rel="stylesheet" href="/client/css/searchStyles.css" media="screen" type="text/css">
-    <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
-
-
-    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="/client/css/actor.css" media="screen" type="text/css">
+    <!-- <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css"> -->
 
 </head>
 
 <body>
 
-    <div class="container content-container">
+    <div class="actor-wrapper">
+        <div class="content-container">
+            <div class="content-wrapper">
+                <div class="actor_bio">
+                    <section class="image_header">
+                        <div class="image_wrapper">
+                            <img class="actor_image" src="" alt="">
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Info</h3>
+                        <span>
+                            <a class="homepage_link" href="#"><i class="fas fa-link fa-2x text-body"></i></a>
+                        </span>
 
-        <h2>Upcoming</h2>
+                        <section class="actor_info">
 
-        <div class="content-wrapper">
-            <!-- Card -->
-            <!-- <div class="card"> -->
+                            <p class="Known_for">
+                                <strong>Known For</strong>
+                            </p>
+                            <p class="gender">
+                                <strong>Gender</strong>
+                            </p>
+                            <p class="birthday">
+                                <strong>Birthday</strong>
+                            </p>
+                            <p class="place_of_birth">
+                                <strong>Place Of Birth</strong>
+                            </p>
 
-            <!-- Card image -->
-            <!-- <div class="view overlay">
-                    <img class="card-img-top" src="" alt="Card image cap">
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div> -->
+                            <ul class="also_known_as">
+                                <strong>Also Known As</strong>
+                            </ul>
 
-            <!-- Card content -->
-            <!-- <div class="card-body"> -->
 
-            <!-- Title -->
-            <!-- <h4 class="card-title">Card title</h4> -->
-            <!-- Text -->
-            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's
-                        content.</p>
-                </div> -->
 
-            <!-- </div> -->
-            <!-- Card -->
+                        </section>
 
+                    </section>
+                    <div class="info">
+                        <section class="biography">
+
+
+                        </section>
+                    </div>
+
+
+                </div>
+
+            </div>
         </div>
-
-
     </div>
 
-    <div class="loading">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-    </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
@@ -93,15 +103,11 @@
 
 
 
-    <!-- Development -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-
 
 
     <script src="/client/js/models/mainHeader.js"></script>
-    <script type="module" src="/client/js/upcoming.js"></script>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="/client/js/actor.js"></script>
+    <!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
 
 
 </body>

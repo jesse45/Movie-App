@@ -101,7 +101,9 @@ router.post('/login', async (req, res) => {
             let uid = decodedToken.uid;
             const emailExist = await User.find({ email: req.body.email }, (err, result) => {
                 if (result) {
-                    res.status(200).send(result[0].favoriteMovies)
+                    console.log(result[0].watchList)
+                    let userMovies = { favoriteMovies: result[0].favoriteMovies, watchList: result[0].watchList };
+                    res.status(200).send(userMovies);
                 }
                 else {
                     res.status(400).send(error)

@@ -5,7 +5,8 @@ function mainHeader() {
         logoutButton: '/client/views/registerUser.html',
         movies: '/client/views/popular.html',
         nowPlaying: '/client/views/nowPlaying.html',
-        upcoming: '/client/views/upcoming.html'
+        upcoming: '/client/views/upcoming.html',
+        popularPeople: '/client/views/popularPeople.html'
     }
 
 
@@ -46,7 +47,7 @@ function mainHeader() {
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">People</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Popular People</a>
+                    <a class="dropdown-item" href="${obj.popularPeople}">Popular People</a>
                 </div>
             </li>
 

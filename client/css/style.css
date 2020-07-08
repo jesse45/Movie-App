@@ -1,6 +1,6 @@
 .swiper-slide {
    position: relative;
-    
+   /* height: auto; */
 }
 
 
@@ -94,14 +94,6 @@ ion-icon {
 	z-index: 1;
   }
   
-  .tippy-box {
-	background-color: #fff;
-	color: #000;
-  }
-  
-  .tippy-arrow {
-	color:  #fff;
-  }
   
   #favorites, watchlist, rating {
 	cursor: pointer;

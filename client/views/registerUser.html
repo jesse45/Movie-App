@@ -18,13 +18,18 @@
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="/server/node_modules/mdbootstrap/css/mdb.min.css">
 
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/client/css/vendors/material-design-iconic-font.css">
+
     <!--css/mdb.min.css-->
     <link rel="stylesheet" href="/client/css/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/client/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/client/css/login.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <form method="POST">
                 <label for="name">Name</label>
@@ -42,7 +47,73 @@
                 <button class="btn btn-primary" id="submit" type="submit">Sign Up</button>
             </form>
         </div>
+    </div> -->
+
+
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" method="POST">
+                <span class="login100-form-title p-b-37">
+                    Sign Up
+                </span>
+
+                <div class="wrap-input100 validate-input m-b-20" data-validate="Enter First Name">
+                    <input class="input100" type="text" name="name" id="name" placeholder="First Name">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-20" data-validate="Enter Username">
+                    <input class=" input100" type="text" name="userName" id="userName" placeholder="Username">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
+                    <input class="input100" type="text" name="email" id="userEmail" placeholder="Username or Email">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+                    <input class="input100" type="password" name="pass" id="password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="btn blue-gradient" id="submit" type="submit">
+                        Sign Up
+                    </button>
+                </div>
+
+                <!-- <div class="text-center p-t-57 p-b-20">
+                    <span class="txt1">
+                        Or login with
+                    </span>
+                </div>
+
+                <div class="flex-c p-b-112">
+                    <a href="#" class="login100-social-item">
+                        <i class="fa fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" class="login100-social-item">
+                        <img src="images/icons/icon-google.png" alt="GOOGLE">
+                    </a>
+                </div> -->
+                <!-- 
+                <div class="text-center">
+                    <a href="/client/views/registerUser.html" class="txt2 hov1">
+                        Sign Up
+                    </a>
+                </div> -->
+            </form>
+
+
+        </div>
     </div>
+
+
+
+    <div id="dropDownSelect1"></div>
+
 
 
 
@@ -69,6 +140,7 @@
 
 
     <script src="/client/js/models/mainHeader.js"></script>
+    <script src="/client/js/registrationCheck.js"></script>
     <script type="module" src="/client/js/registerUser.js"></script>
 
 

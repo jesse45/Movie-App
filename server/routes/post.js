@@ -6,7 +6,7 @@ const User = require('../model/User');
 
 var admin = require("firebase-admin");
 
-router.post('/api/favorites', async (req, res) => {
+router.post('/api/bookmark', async (req, res) => {
     // verify if user is valid, then proceed
     // when receiving request to post data, check if user already exists
     // if user exist, persist data to database
@@ -103,9 +103,17 @@ router.post('/api/watchlist', async (req, res) => {
             const emailExist = await User.findOne({ email: userEmail });
             if (emailExist) {
                 //User.findOneAndUpdate({email : userEmail}, {$push})
-                const user = await User.update({ email: userEmail }, { $push: { watchList: req.body.movie } });
-                // console.log(user);
-                res.status(200).send(uid)
+
+                if (emailExist.watchList.includes(req.body.movie)) {
+                    console.log("in the watchlist function")
+                    res.status(200).send(emailExist.watchList);
+                }
+                else {
+                    const user = await User.findOneAndUpdate({ email: userEmail }, { $push: { watchList: req.body.movie } }, { new: true });
+                    console.log(user);
+                    res.status(200).send(user.watchList);
+                }
+
 
             }
             else {
@@ -147,7 +155,7 @@ router.post('/api/watchlist', async (req, res) => {
     //res.status(200).send("uid")
 });
 
-router.delete('/unsubscribe/favorites', async (req, res) => {
+router.delete('/unsubscribe/bookmark', async (req, res) => {
 
     admin.auth().verifyIdToken(req.body.id)
         .then(async function (decodedToken) {
@@ -162,6 +170,38 @@ router.delete('/unsubscribe/favorites', async (req, res) => {
 
                     //send the updated array to the client
                     res.status(200).send(result.favoriteMovies)
+                });
+                // console.log(user);
+
+
+                //send the updated array to the client
+
+            }
+
+
+            // ...
+        }).catch(function (error) {
+            // Handle error
+            console.log(error)
+            res.status(400).send(error)
+        });
+});
+
+router.delete('/unsubscribe/watchlist', async (req, res) => {
+
+    admin.auth().verifyIdToken(req.body.id)
+        .then(async function (decodedToken) {
+            let uid = decodedToken.uid;
+            let userEmail = decodedToken.email;
+
+            const emailExist = await User.findOne({ email: userEmail });
+
+            if (emailExist) {
+                const user = await User.findOneAndUpdate({ email: userEmail }, { $pull: { watchList: req.body.movie } }, { new: true }, (err, result) => {
+                    console.log(result);
+
+                    //send the updated array to the client
+                    res.status(200).send(result.watchList)
                 });
                 // console.log(user);
 

@@ -15,7 +15,7 @@ class Popular {
 
     async loadMovies() {
 
-        let search_api = "".concat('movie', '/', 'popular', '/', this.pageNumber);
+        let search_api = 'movie' + '/' + 'popular' + '/' + this.pageNumber;
         console.log(search_api);
 
         const response = await fetch(this.api_url + search_api);
@@ -65,7 +65,7 @@ class Popular {
                                 data-movie="${el.title}"></ion-icon>
                             </div>
                             <img class="card-img-top card_radius" src="${card_image}" alt="Card image cap">
-                            <a href="/client/views/movies.html" data-src="${el.id}" >
+                            <a href="${`/client/views/movies.html?movieId=${el.id}&movie=${el.title}`}" data-src="${el.id}" >
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                             
@@ -73,7 +73,7 @@ class Popular {
 
                         <div class="card-body">
                             <h6 class="card-title">
-                                <a href="/client/views/movies.html" data-src="${el.id}" >
+                                <a href="${`/client/views/movies.html?movieId=${el.id}`}" data-src="${el.id}" >
                                     ${el.title}
                                 </a>
                             </h6>
@@ -88,9 +88,9 @@ class Popular {
 
         tippy('.ion-icon', {
             content:
-                `<p class="favorites-popup" >Sign Up to add to Favorite</p>
+                `<p class="bookmark-popup" >Sign Up to add to Favorite</p>
                  <hr>
-                 <a class="link-popup"  href="/client/views/loginUser.html">Login</a>
+                 <p class="link-popup">Login</p>
                  <hr>
                  <p class="watchlist-popup" >Sign in to add to watchlist</p>`,
 
@@ -218,7 +218,7 @@ $(document).on('click', '.ion-icon', (event) => {
     //console.log(popular.movie)
 
 
-    const favorites = document.querySelector('.favorites-popup');
+    const favorites = document.querySelector('.bookmark-popup');
     const watchlist = document.querySelector('.watchlist-popup');
     const rating = document.querySelector('.user-rating');
     const loginLink = document.querySelector('.link-popup');
@@ -232,14 +232,19 @@ $(document).on('click', '.ion-icon', (event) => {
 
     if (logout.textContent === 'Sign Out') {
         //get the user movies
-        let stringMovies = sessionStorage.getItem('userMovies');
-        userMovie.userMovies = JSON.parse(stringMovies);
+        let stringBookmarks = sessionStorage.getItem('bookmarks');
+        userMovie.bookmarks = JSON.parse(stringBookmarks);
 
-        isMovie = userMovie.userMovies.includes(popular.movie)
+        let stringWatchlist = sessionStorage.getItem('watchlist');
+        userMovie.watchlist = JSON.parse(stringWatchlist);
+
+        console.log(popular.movie)
+        isMovie = userMovie.watchlist.includes(popular.movie)
+        console.log("ismovie:  " + isMovie)
 
 
-        const favorite_html = `<p class="favorites-popup" id="favorites"><i class="fas fa-bookmark ${isMovie ? 'indigo-text' : ''} "></i> Add to Favorites</p>`;
-        const watchlist_html = `<p class="link-popup" id="watchlist"><i class="fas fa-list"></i> Add to Watchlist</p>`;
+        const favorite_html = `<p class="bookmark-popup" id="bookmark"><i class="fas fa-bookmark ${userMovie.bookmarks.includes(popular.movie) ? 'blue-text' : ''} "></i> Add to Favorites</p>`;
+        const watchlist_html = `<p class="link-popup" id="watchlist"><i class="fas fa-list ${userMovie.watchlist.includes(popular.movie) ? 'blue-text' : ''}"></i> Add to Watchlist</p>`;
         const rating_html = `<p class="watchlist-popup" id="rating"><i class="fas fa-star"></i> Your Rating</p>`;
         // remove login link
         // add icons to favorites, watchlist, and ratins and add links
@@ -253,7 +258,7 @@ $(document).on('click', '.ion-icon', (event) => {
 
         // watchlist.outerHTML = rating_html;
 
-        $('.favorites-popup').html(favorite_html);
+        $('.bookmark-popup').html(favorite_html);
         $('.link-popup').html(watchlist_html);
         $('.watchlist-popup').html(rating_html);
 
@@ -269,8 +274,9 @@ $(document).on('click', '.ion-icon', (event) => {
 
 })
 
-$(document).on('click', '#favorites', (event) => {
-    //console.log("in the jquery function");
+$(document).on('click', '#bookmark', (event) => {
+    console.log("in the jquery favorites function");
+    let user = sessionStorage.getItem('user');
     const logout = document.querySelector('#logout-button');
     const bookmark = document.querySelector('.fa-bookmark');
     const movie = popular.movie;
@@ -278,7 +284,7 @@ $(document).on('click', '#favorites', (event) => {
 
 
 
-    if (logout.textContent === 'Sign Out') {
+    if (user) {
 
         // check if indigo-text is in the classlist
         // if it is then post else delete
@@ -287,11 +293,12 @@ $(document).on('click', '#favorites', (event) => {
 
         firebase.auth().currentUser.getIdToken().then(async (idToken) => {
 
-            let postRoute = "".concat(api_url + "api/favorites");
-            let deleteRoute = "".concat(api_url + "unsubscribe/favorites/")
+            let postRoute = api_url + "api/bookmark";
+            let deleteRoute = api_url + "unsubscribe/bookmark";
             let userIdToken = { id: idToken, movie: movie };
 
-            if (bookmark.classList.contains('indigo-text')) {
+            // if bookmark contains this color, remove the movie
+            if (bookmark.classList.contains('blue-text')) {
                 const removeMovie = await fetch(deleteRoute, {
 
                     method: 'DELETE',
@@ -303,9 +310,9 @@ $(document).on('click', '#favorites', (event) => {
 
                 const data = await removeMovie.json();
                 console.log(data);
-                sessionStorage.setItem('userMovies', JSON.stringify(data))
+                sessionStorage.setItem('bookmarks', JSON.stringify(data))
 
-                bookmark.classList.remove('indigo-text')
+                bookmark.classList.remove('blue-text')
             }
             else {
 
@@ -316,12 +323,12 @@ $(document).on('click', '#favorites', (event) => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                })
+                });
 
                 const data2 = await addMovie.json();
                 console.log(data2)
-                sessionStorage.setItem('userMovies', JSON.stringify(data2))
-                bookmark.classList.add('indigo-text')
+                sessionStorage.setItem('bookmarks', JSON.stringify(data2))
+                bookmark.classList.add('blue-text')
             }
 
         }).catch((error) => {
@@ -339,31 +346,55 @@ $(document).on('click', '#favorites', (event) => {
 
 $(document).on('click', '#watchlist', (event) => {
     //console.log("in the jquery function");
+    let user = sessionStorage.getItem('user');
     const logout = document.querySelector('#logout-button');
+    const watchList = document.querySelector('.fa-list');
     const movie = popular.movie;
 
     console.log(movie);
 
 
-    if (logout.textContent === 'Sign Out') {
-
-
+    if (user) {
 
         firebase.auth().currentUser.getIdToken().then(async (idToken) => {
 
-            let postRoute = "".concat(api_url + "api/watchlist")
+            let postRoute = "".concat(api_url + "api/watchlist");
+            let deleteRoute = api_url + "unsubscribe/watchlist";
             let userIdToken = { id: idToken, movie: movie };
 
-            await fetch(postRoute, {
+            if (watchList.classList.contains('blue-text')) {
+                const removeMovie = await fetch(deleteRoute, {
 
-                method: 'POST',
-                body: JSON.stringify(userIdToken),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }).then(data => {
-                console.log(data.text())
-            })
+                    method: 'DELETE',
+                    body: JSON.stringify(userIdToken),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                const data = await removeMovie.json();
+                console.log(data);
+                sessionStorage.setItem('watchlist', JSON.stringify(data))
+
+                watchList.classList.remove('blue-text')
+            }
+            else {
+                const addMovie = await fetch(postRoute, {
+
+                    method: 'POST',
+                    body: JSON.stringify(userIdToken),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                const data2 = await addMovie.json();
+                console.log(data2)
+                sessionStorage.setItem('watchlist', JSON.stringify(data2))
+                watchList.classList.add('blue-text')
+
+            }
+
         }).catch((error) => {
             // Handle error
             console.log(error)
